@@ -1,4 +1,7 @@
-# Amostras
+# Aquisição de Dados através de Cargas Elétricas 
+
+Software desenvolvido na minha Graduação de Engenharia de Computação na Universidade Federal do Espírito Santo - UFES com objetivo de estudar as cargas elétricas de um grupo de lâmpadas de mesmo fabricante e idênticas.
+## Pasta Amostras
  
   Nesta pasta encontra-se o *Banco de Dados* utilizado para a validação do processo de aquisição de dados. As amostras estão organizadas em pastas numeradas de 01 a 12 e cada pasta contém 16 arquivos de aquisição de dados.
 
@@ -11,19 +14,19 @@
 >           1              0           0           0           1              .txt
 >     Nº do momento     Lâmp. 1     Lâmp. 2     lâmp. 3     lâmp. 4      nome extensão
 
-### Os Dados
+#### Os Dados
 
   Dentro de cada arquivo de texto encontra-se duas colunas de dados. A coluna da direita representa a coluna das aquisições de Tensão Elétrica e a coluna da esquerda representa a coluna das aquisições de Corrente Elétrica. Esses dados são originais adquiridas com o microcontrolador.
 
-# Software
+## Pasta Software
 
 Nesta pasta encontra-se o programa para a aquisição de dados. O programa foi desenvolvido em *Linguagem C* utilizando a IDE Arduino.
 
-### Objetivo
+#### Objetivo
 
 Faz a aquisição de dados da plataforma automatizavel.
 
-### Como Funciona?
+#### Como Funciona?
 
 Verifique se o *Software Arduino* está instalado em seu computador, se não estiver basta fazer o download e instalar utilizando o  [*Software Arduino*](www.arduino.cc/en/Main/Software).
 
@@ -35,15 +38,15 @@ No programa basta fazer as configurações iniciais, transferir o código para o
 
 - Importante: O artigo do trabalho desenvolvido pode ser acessado através do link ...
 
-# Separa Dados
+## Pasta Separa Dados
 
 Nesta pasta encontra-se o programa para geração dos arquivos de Tensão Elétrica e Corrente Elétrica para utilização no programa de geração de curvas. O programa foi desenvolvido em *Linguagem C* utilizando a IDE CodeBlock. 
 
-### Objetivo
+#### Objetivo
 
 Separa o arquivo de aquisição contendo as duas colunas de dados (Corrente Elétrica e Tensão Elétrica) em dois arquivos separadamente e faz o cálculo dos dados para a Tensão e Corrente Elétrica reais.
 
-### Como Funciona?
+#### Como Funciona?
 
 Verifique se o *Software CodeBlock* está instalado em seu computador, se não estiver basta fazer o download e instalar utilizando o [*Software CodeBlock*](www.codeblocks.org/downloads).
 
@@ -56,16 +59,16 @@ Ao final da execução do programa, haverá dois tipos de arquivos com os dados 
 >     T10010.txt
 
 
-# Gera Gráfico Matlab
+## Pasta Gera Gráfico Matlab
 
 Nesta pasta encontra-se o programa para geração das curvas de Tensão e Corrente Elétricas. O arquivo foi desenvolvido utilizando a *Linguagem MatLab*, portanto, precisa-se do *Software MatLab* para execução. 
 
-### Objetivo
+#### Objetivo
 
 Gera gráficos de Tensão e Corrente Elétrica para estudos.
 
 
-### Como Funciona?
+#### Como Funciona?
 
 Primeiramente verifique se o *Software MatLab* está instalado em seu computador, se não estiver basta fazer o download e instalar utilizando o [*Software MatLab*](www.mathworks.com/downloads).
 
