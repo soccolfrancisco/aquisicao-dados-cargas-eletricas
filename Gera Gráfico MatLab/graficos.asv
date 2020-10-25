@@ -1,0 +1,47 @@
+nomeArquivoTensao = 'T10010.txt';
+nomeArquivoCorrente = 'C10010.txt';
+numeroDeVoltas = 2; %numero de voltas do fio no sensor
+
+arqTensao = fopen(nomeArquivoTensao, 'r');
+medicoesTensao = fscanf(arqTensao,'%d');
+fclose(arqTensao);
+
+arqCorrente =  fopen(nomeArquivoCorrente, 'r');
+medicoesCorrente = fscanf(arqCorrente, '%d');
+fclose(arqCorrente);
+
+%Grfico da tensao e corrente medidos
+figure(1);
+
+
+%tensao lida no arduino mapeamento: 4095 -> 3,3V
+arduinoTensao = 3.3 * (medicoesTensao - 500) / 4095;     
+arduinoCorrente = 3.3 * (medicoesCorrente - 500) / 4095; % converte para a tesão de fato lida no arduino, considerando o deslocamento
+
+% converte para tensão real de acordo com o sensor
+tensaoReal = (3 * arduinoTensao / (47 * 2.5)) * 15000; 
+correnteReal = ((2.5 * arduinoCorrente / 270) * 1000) / numeroDeVoltas;
+
+% vetor de tempo para 164Khz
+x = 0.0:0.042:100;
+% quantidade de amostras
+L = 2381;
+
+figure(2);
+subplot(2,1,1)
+% vetor de tensão para 164Khz
+y = tensaoReal(1:L);
+plot(x,y);
+title('Tensão Elétrica');
+xlabel('Tempo (ms)');
+ylabel('Amplitude (V)');
+
+subplot(2,1,2)
+% vetor de corrente para 164Khz
+y = correnteReal(1:L);
+plot(x,y);
+title('Corrente Elétrica com Fs=35,02kamostras/s');
+xlabel('Tempo (ms)');
+ylabel('Amplitude (A)');
+
+
